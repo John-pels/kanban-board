@@ -1,8 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,300&display=swap');
+
+:root {
+    --border-radius: 10px;
+    --bg-color: #1e3a8a;
+    --white-color: #fff;
+    --btn-bg-color: #fda4af;
+    --btn-bg-hover-color: #fb7185;
+    --stone-color: #44403c;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.full-screen {
+    width: 100%;
+    height: 100vh;
+}
+
+.home-wrapper {
+    background-color: var(--bg-color);
+    color: var(--white-color);
+}
+
+.container {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.herotext {
+    font-size: 3rem;
+    line-height: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.sub-herotext {
+    font-size: 1.8rem;
+    font-style: italic;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+    color: var(--stone-color);
+    font-size: 1.2rem;
+    background: var(--btn-bg-color);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--btn-bg-hover-color);
+}
+
+@media (max-width: 768px) {
+    .herotext {
+        font-size: 2rem;
+    }
+
+    .sub-herotext {
+        font-size: 1.4rem;
+    }
 }
