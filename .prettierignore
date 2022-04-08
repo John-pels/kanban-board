@@ -1,0 +1,21 @@
+.cache
+package.json
+package-lock.json
+public
+
+
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
