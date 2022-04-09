@@ -6,12 +6,12 @@ import './style.css'
 const ListColumn = () => {
 
     return (
-        <section className="column">
-            <div className="column__header">
-                <h3 className="column__heading">Reusable components</h3>
-                <p className="column__subheading">5 Tasks</p>
+        <section className="list-column">
+            <div className="list-column__header">
+                <h3 className="list-column__heading">Reusable components</h3>
+                <p className="list-column__subheading">5 Tasks</p>
             </div>
-            <div className="column__content">
+            <div className="list-column__content">
                 <TaskBox />
                 <TaskBox />
                 <TaskBox />

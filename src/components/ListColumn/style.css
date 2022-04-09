@@ -1,4 +1,4 @@
-.column {
+.list-column {
     display: flex;
     flex-direction: column;
     flex: 0 0 300px;
@@ -10,15 +10,15 @@
     padding: var(--spacing-md);
 }
 
-.column__heading {
+.list-column__heading {
     font-size: 1.5rem;
 }
 
-.column__subheading {
+.list-column__subheading {
     font-size: 1rem;
 }
 
-.colummn__content {
+.list-colummn__content {
     margin: 1rem 0 2rem 0;
     background: inherit;
     min-height: 300px;
