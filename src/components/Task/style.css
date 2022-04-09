@@ -1,0 +1,18 @@
+.list-container {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 2rem 1rem;
+    background-color: var(--stone-color);
+    border-radius: var(--border-radius);
+}
+
+.list-container::-webkit-scrollbar {
+    height: 3px;
+}
+
+.list-container::-webkit-scrollbar-thumb {
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+}

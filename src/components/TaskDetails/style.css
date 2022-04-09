@@ -1,0 +1,13 @@
+.task__title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    line-height: 10px;
+}
+
+.task__description {
+    font-size: 1rem;
+}
+
+.task__date span {
+    font-weight: bolder;
+}

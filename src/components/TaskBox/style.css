@@ -1,0 +1,35 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    background: var(--white-color);
+    color: var(--gray);
+    padding: 0 var(--spacing-sm) var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.card__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.card__clipboard {
+    cursor: pointer;
+    color: var(--bg-color);
+}
+
+.card__description {
+    font-size: 1rem;
+}
+
+.card__date {
+    color: var(--bg-color);
+    font-weight: 600;
+}

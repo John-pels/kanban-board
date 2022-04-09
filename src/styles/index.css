@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,300&display=swap');
 
 :root {
-    --border-radius: 10px;
+    --border-radius: 8px;
     --bg-color: #1e3a8a;
+    --cyan-color: #22d3ee;
+    --cyan-deep: #0891b2;
     --white-color: #fff;
+    --gray: #6b7280;
     --btn-bg-color: #fda4af;
     --btn-bg-hover-color: #fb7185;
     --stone-color: #44403c;
+    --stone-hover-color: #292524;
+    --input-border: 1px solid var(--bg-color);
+    --spacing-sm: 12px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
 }
 
 body {
@@ -17,6 +25,26 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--spacing-md);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 0;
 }
 
 .flex {
@@ -31,10 +59,12 @@ body {
 
 .full-screen {
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    padding-bottom: var(--spacing-lg);
 }
 
-.home-wrapper {
+.wrapper {
+    width: 100%;
     background-color: var(--bg-color);
     color: var(--white-color);
 }
@@ -74,6 +104,26 @@ body {
     background: var(--btn-bg-hover-color);
 }
 
+.btn-cyan {
+    background: var(--cyan-color);
+}
+
+.btn-cyan:hover {
+    background: var(--cyan-deep);
+}
+
+.btn-stone {
+    background: var(--stone-color);
+    color: var(--white-color);
+}
+.btn-stone:hover {
+    background: var(--stone-hover-color);
+}
+
+.btn-full-width {
+    width: 100%;
+}
+
 @media (max-width: 768px) {
     .herotext {
         font-size: 2rem;
@@ -81,5 +131,20 @@ body {
 
     .sub-herotext {
         font-size: 1.4rem;
+    }
+
+    .header {
+        padding: 2rem 1rem;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .btn {
+        font-size: 1em;
+        padding: 1rem 1.5rem;
+    }
+
+    .container {
+        width: 100%;
     }
 }

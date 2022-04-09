@@ -1,0 +1,8 @@
+.newtask-container {
+    position: absolute;
+    width: 100%;
+    bottom: 15px;
+    padding: var(--spacing-sm);
+    right: 0;
+    left: 0;
+}

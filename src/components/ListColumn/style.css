@@ -1,0 +1,27 @@
+.column {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 300px;
+    padding: 10px;
+    width: 30rem;
+    background: var(--gray);
+    position: relative;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+}
+
+.column__heading {
+    font-size: 1.5rem;
+}
+
+.column__subheading {
+    font-size: 1rem;
+}
+
+.colummn__content {
+    margin: 1rem 0 2rem 0;
+    background: inherit;
+    min-height: 300px;
+    max-height: calc(100vh - 350px);
+    overflow-y: auto;
+}

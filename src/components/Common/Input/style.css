@@ -1,0 +1,18 @@
+.input-label {
+    font-size: 1rem;
+}
+
+.inputfield,
+.textarea-field {
+    border: var(--input-border);
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    transition: 0.3s;
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    font-size: 1rem;
+}
+
+.textarea-field {
+    height: 5rem;
+}
