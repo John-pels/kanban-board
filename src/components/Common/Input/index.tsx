@@ -5,9 +5,17 @@ interface InputProps {
     name: string
     label?: string
     value?: string
-    onChange?: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
+    onChange?: (event: ChangeEvent<HTMLInputElement>) => void
     placeholder?: string
 }
+
+type OtherProps = Omit<InputProps, 'onChange'>
+
+interface TextareaProps extends OtherProps {
+    onChange?: (event: ChangeEvent<HTMLTextAreaElement>) => void
+}
+
+
 const CustomInput: FC<InputProps> = ({ name, label = 'Task name', value, onChange, placeholder }) => {
     return (
         <>
@@ -20,7 +28,7 @@ const CustomInput: FC<InputProps> = ({ name, label = 'Task name', value, onChang
 export { CustomInput }
 
 
-export const CustomTextArea: FC<InputProps> = ({ name, label = 'Task Description', value, onChange }) => {
+export const CustomTextArea: FC<TextareaProps> = ({ name, label = 'Task Description', value, onChange }) => {
     return (
         <>
             <label htmlFor={name} className='input-label'>{label}</label>

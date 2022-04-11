@@ -1,7 +1,11 @@
 import { CustomButton } from "../components/Common"
 import { Link } from "react-router-dom"
+import { useContext } from "react"
+import { Store } from "../components/context"
 
 const HomeScreen = () => {
+    const { lists } = useContext(Store)
+    console.log("++++++++", lists)
 
     return (
 

@@ -103,6 +103,10 @@ body {
 .btn:hover {
     background: var(--btn-bg-hover-color);
 }
+.btn:disabled {
+    cursor: progress;
+    background: var(--gray);
+}
 
 .btn-cyan {
     background: var(--cyan-color);
