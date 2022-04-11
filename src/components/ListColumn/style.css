@@ -18,10 +18,10 @@
     font-size: 1rem;
 }
 
-.list-colummn__content {
+.list-column__content {
     margin: 1rem 0 2rem 0;
     background: inherit;
-    min-height: 300px;
-    max-height: calc(100vh - 350px);
+    min-height: 150px;
+    max-height: calc(100vh - 150px);
     overflow-y: auto;
 }

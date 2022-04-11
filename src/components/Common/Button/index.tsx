@@ -13,7 +13,7 @@ const CustomButton: FC<ButtonProps> = ({ onClick, text = 'Get Started', classNam
         <button className={`btn ${className}`}
             onClick={onClick}
             disabled={isProcessing}>
-            {isProcessing ? 'Please wait...' : text}
+            {text}
         </button>
     )
 }

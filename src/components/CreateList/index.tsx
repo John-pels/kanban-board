@@ -4,12 +4,15 @@ import { CustomButton, CustomInput, CustomModal } from "../Common"
 import { ModalProps } from "../Common/Modal/types"
 import { taskRequests } from '../../services/requests'
 import toast from "react-hot-toast"
+import { useContext } from "react"
+import { Store } from "../context"
 
 type CreateListProps = Pick<ModalProps, "setShowModal" | 'showModal'>
 
 const CreateListModal: FC<CreateListProps> = ({ showModal, setShowModal }) => {
     const [title, setTitle] = useState('')
     const [isProcessing, setIsProcessing] = useState(false)
+    const { setLists } = useContext(Store)
 
     const handleSubmit = async (e: any) => {
         setIsProcessing(true)
@@ -17,9 +20,15 @@ const CreateListModal: FC<CreateListProps> = ({ showModal, setShowModal }) => {
         try {
             const response = await taskRequests.addTickets({ title: title })
             toast.success(response?.data?.message || 'Ticket created successfully!')
-            setTitle('')
-            setShowModal(false)
-            setIsProcessing(false)
+
+            if (response?.data) {
+                setTitle('')
+                setShowModal(false)
+                setIsProcessing(false)
+                const listResults = await taskRequests.getAllTickets()
+                const allLists = await listResults.data
+                setLists([...allLists])
+            }
 
         } catch (error: any) {
             setIsProcessing(false)

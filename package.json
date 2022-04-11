@@ -56,5 +56,8 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "devDependencies": {
+    "@types/react-beautiful-dnd": "^13.1.2"
   }
 }

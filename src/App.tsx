@@ -15,15 +15,20 @@ import { arrayLength } from "./utils/data";
 
 const HomeScreen = lazy(() => import('./pages'))
 const TaskHomeScreen = lazy(() => import('./pages/tasks'))
+const TaskDetailsScreen = lazy(() => import('./pages/tasks/details'))
 
 function App() {
-  const [lists, setLists] = useState([])
+  const [lists, setLists] = useState<any>([])
+
+  const updateLists = (lists: any) => {
+    setLists([...lists])
+  }
   const getAllLists = useCallback(async () => {
     try {
       const response = await taskRequests.getAllTickets()
       const allLists = await response.data
       if (arrayLength(allLists)) {
-        setLists(allLists)
+        setLists([...allLists])
       }
     } catch (error: any) {
       const message = error?.response?.data?.message
@@ -33,18 +38,19 @@ function App() {
 
   useEffect(() => {
     getAllLists()
-  }, [])
+  }, [getAllLists])
 
   return (
     <Store.Provider value={{
       lists: lists,
-      setLists: () => { }
+      setLists: updateLists
     }}>
       <Router>
         <Suspense fallback={<Spinner />}>
           <Routes>
             <Route path="/" element={<HomeScreen />} />
             <Route path="/tasks" element={<TaskHomeScreen />} />
+            <Route path="/tasks/:id/details" element={<TaskDetailsScreen />} />
           </Routes>
           <Toaster />
         </Suspense>

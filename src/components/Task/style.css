@@ -1,5 +1,6 @@
 .list-container {
     display: flex;
+    align-items: flex-start;
     gap: 25px;
     overflow-x: auto;
     flex-wrap: nowrap;
@@ -15,4 +16,22 @@
 .list-container::-webkit-scrollbar-thumb {
     background-color: var(--white-color);
     border-radius: var(--border-radius);
+}
+
+.placeholder {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+}
+
+.placeholder img {
+    width: 12%;
+}
+
+.placeholder__text {
+    text-align: center;
+    line-height: 10px;
+    color: var(--white-color);
 }

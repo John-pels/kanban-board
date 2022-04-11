@@ -8,6 +8,32 @@
     font-size: 1rem;
 }
 
-.task__date span {
+span {
     font-weight: bolder;
+}
+
+.heading {
+    text-align: center;
+}
+
+.centered-wrapper {
+    width: 500px;
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 100%;
+    border: 1px solid var(--gray);
+    border-radius: var(--border-radius);
+}
+
+.pt {
+    padding-top: 100px;
+}
+
+.breadcrumb {
+    font-weight: 800;
+}
+
+#arrow-left {
+    vertical-align: middle;
+    margin-right: 0.5rem;
 }

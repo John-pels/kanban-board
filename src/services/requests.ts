@@ -6,8 +6,8 @@ class TaskRequests extends RequestConfig {
         return await this.defaultApi.get(routes.TICKETS);
     };
 
-    getATicket = async (ticketId: string) => {
-        return await this.defaultApi.get(`${routes.TICKETS}/${ticketId}`);
+    getATicketTask = async (ticketId: string, taskId: string) => {
+        return await this.defaultApi.get(`${routes.TICKETS}/${ticketId}/tasks/${taskId}`);
     };
 
     addTickets = async (payload: NewTicketData) => {
