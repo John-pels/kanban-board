@@ -5,6 +5,7 @@ import toast from "react-hot-toast"
 import { CustomButton, CustomInput, CustomTextArea } from "../Common"
 import { Store } from "../context"
 
+
 interface NewTaskProps {
     ticketId: string
 }
@@ -12,6 +13,7 @@ const AddNewtaskBox: FC<NewTaskProps> = ({ ticketId }) => {
     const [showContent, setShowContent] = useState(false)
     const { setLists } = useContext(Store)
     const [isProcessing, setIsProcessing] = useState(false)
+
     const [taskData, setTaskData] = useState({
         title: '',
         description: ''
@@ -33,6 +35,10 @@ const AddNewtaskBox: FC<NewTaskProps> = ({ ticketId }) => {
             if (response?.data) {
                 setIsProcessing(false)
                 setShowContent(false)
+                setTaskData({
+                    title: '',
+                    description: ''
+                })
                 const listResults = await taskRequests.getAllTickets()
                 const allLists = await listResults.data
                 setLists([...allLists])

@@ -10,7 +10,7 @@ import { Store } from "../context"
 type CreateListProps = Pick<ModalProps, "setShowModal" | 'showModal'>
 
 const CreateListModal: FC<CreateListProps> = ({ showModal, setShowModal }) => {
-    const [title, setTitle] = useState('')
+    const [title, setTitle] = useState({ title: "" })
     const [isProcessing, setIsProcessing] = useState(false)
     const { setLists } = useContext(Store)
 
@@ -18,13 +18,13 @@ const CreateListModal: FC<CreateListProps> = ({ showModal, setShowModal }) => {
         setIsProcessing(true)
         e.preventDefault()
         try {
-            const response = await taskRequests.addTickets({ title: title })
+            const response = await taskRequests.addTickets(title)
             toast.success(response?.data?.message || 'Ticket created successfully!')
 
             if (response?.data) {
-                setTitle('')
                 setShowModal(false)
                 setIsProcessing(false)
+                setTitle({ title: "" })
                 const listResults = await taskRequests.getAllTickets()
                 const allLists = await listResults.data
                 setLists([...allLists])
@@ -43,12 +43,18 @@ const CreateListModal: FC<CreateListProps> = ({ showModal, setShowModal }) => {
         <CustomModal showModal={showModal} setShowModal={setShowModal}>
             <form className="form">
                 <CustomInput label="List Title"
-                    name="title" placeholder="Enter the list title"
-                    onChange={(e) => setTitle(e.target.value)} />
+                    name="title"
+                    value={title.title}
+                    placeholder="Enter the list title"
+                    onChange={(e) => setTitle({ title: e.target.value })} />
             </form>
             <div className="flex-row">
                 <CustomButton text="Cancel" onClick={handleClose} />
-                <CustomButton text="Create" className="btn-stone" isProcessing={isProcessing} onClick={handleSubmit} />
+                <CustomButton
+                    text="Create"
+                    className="btn-stone"
+                    isProcessing={isProcessing}
+                    onClick={handleSubmit} />
             </div>
 
         </CustomModal>
