@@ -27,5 +27,5 @@
 > -   Move tickets between the various columns
 > -   Create ticket under each column
 > -   View task details in a Modal by clicking the task title
-> -   Also View task via a shareable link
+> -   Also View task via a shareable link by copying and pasting the url in another tab
 > -   Copy ticket link to Clipboard
