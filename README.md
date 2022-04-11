@@ -13,6 +13,7 @@
 
 > #### To run the app on your local computer
 >
+> -   create an .env file, then copy and paste **REACT_APP_API_BASE_URL=https://62532b4cc534af46cb9481ce.mockapi.io/kb** intto it
 > -   yarn install or npm run install
 > -   yarn start or npm run start
 
